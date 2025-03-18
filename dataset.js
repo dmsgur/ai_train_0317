@@ -33,7 +33,7 @@ d1.set_img(1,{imgtitle:"캘리포니아 주택 가격예측",imgurl:"",imglog:""
 d1.set_content("당뇨상태 1년후 예측 선형 회귀모델")
 d1.set_img(2,{imgtitle:"1년후 당뇨상태 예측",imgurl:"",imglog:"",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/LinearRegression/examp_LinearRegression_bostonHousing.py"})//이미지타이틀
 
-d1.set_fill("서버의 보안성과 각 수행기능별 패턴을 분리하기 위해 Spring WAS 와 사용자 View 기능을 위해 웹브라우져에서 일반적인 작동이 가능한 HTML5 를 구현하며 데이터베이스 연동 대신 파일로 회원목록 저장")//사용자 에필로그
+d1.set_fill("선형 회귀모델은 단일 데이터를 이용하거나 다중 데이터를 이용하여 연속적인 값을 출력하여 예측한다.")//사용자 에필로그
 data_sets.push(d1)
 
 // menu2 =============================================================
