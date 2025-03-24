@@ -43,10 +43,25 @@ d1.set_img(2,{imgtitle:"1년후 당뇨상태 예측",imgurl:"",imglog:"",sourceu
 
 d1.set_fill("선형 회귀모델은 단일 데이터를 이용하거나 다중 데이터를 이용하여 연속적인 값을 출력하여 예측한다.")//사용자 에필로그
 data_sets.push(d1)
-
+//d2.set_img(0,{imgtitle:"",imglog:"",imgurl:"",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
 // menu2 =============================================================
-let d2 = new DataSet("공통모듈구현")//메인타이틀
+let d2 = new DataSet("분류모델구현")//메인타이틀
+d2.set_content("패션 mnist 회귀 다중 분류")//서브 타이틀
+d2.set_img(0,{imgtitle:"fashion_mnist 데이터 수신",imglog:"1.구글에서 제공하는 드레스,셔츠,샌달등의 패션관련 이미지 다운로드",imgurl:"https://drive.google.com/file/d/1gKlAeMSj3c0ZT77286VcpiPH_EcqR8Mw/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"수신데이터 확인",imglog:"2.훈련데이터 6만개, 테스트 데이터 1만개, 이미지 사이즈 28,28 1채널 그레이, 정답데이터 정수형",imgurl:"https://drive.google.com/file/d/1JpBBKJOMjbPs2PffhKzbSGN086GjB7Mq/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"훈련데이터 minmax 정규화",imglog:"3.훈련데이터의 0 ~ 1 사이값으로 정규화 실행",imgurl:"https://drive.google.com/file/d/17j1Qn9OU46Zt64at9Fonx982ktiDX8Cl/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"데이터셔플링 및 정답일치성확인",imglog:"4.데이터셔플링 후 정답과 일치하도록 셔플이 되었는지 확인 작업",imgurl:"https://drive.google.com/file/d/1rFSxkrOBXaE28LziEhZQVM-PV_IhvOlt/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"커스텀원핫인코딩 수행",imglog:"5.커스텀 원핫인코딩 클래스 생성후 원하는 방법으로 원핫인코딩 후 작동 확인",imgurl:"https://drive.google.com/file/d/1Y1-uVH30ePlGIKkpErMSJxyYbRktLFMe/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/custom_encoder.py"})
+d2.set_img(0,{imgtitle:"모델컴파일 및 훈련실행",imglog:"6.flatten으로 완전층 연결후 다중분류모델로 softmax 활성화 함수로 10class 출력",imgurl:"https://drive.google.com/file/d/1xPp4IrS6kFSSv0SZW8TFw_gJpCpTvIgH/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"훈련결과 시각화",imglog:"7. 훈련 종료훈 손실 및 정확도 시각화  표현",imgurl:"https://drive.google.com/file/d/1hEuYnoAtD1I3liSCBBQI6N_4v-ljvVh4/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"테스트 데이터 예측",imglog:"8.모델의 테스트데이터 예측과 예측결과 시각화",imgurl:"https://drive.google.com/file/d/1xXCytm9EGySLPqvmkCNGB5vc0N6WgubQ/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
 
+d2.set_img(0,{imgtitle:"모델 및 인코더 저장",imglog:"훈련된 모델의 저장과 레이블이 연결된 인코더 파일로 저장",imgurl:"https://drive.google.com/file/d/1xZoMlcr3ex07F_TylMS5JmTB3PZPYp0G/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"모델과 인코더 불러오기",imglog:"실제 이미지 측정을 위해 훈련된 모델과 라벨 인코더 다시 불러오기",imgurl:"https://drive.google.com/file/d/1LyomZ9RxmEIS5YTwDNAujQ9UQkTdWRJ1/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"실제이미지 테스트",imglog:"인터넷의 이미지를 복사하여(test_img) 모델에 적합하도록 전처리후 예측값 출력",imgurl:"https://drive.google.com/file/d/1dsakLTu8s-61KTbkbtvcQIv43_9xeXup/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+d2.set_img(0,{imgtitle:"실제 이미지 예측결과 시각화",imglog:"실제이미지를 예측한 결과를 시각화 하여 표현",imgurl:"https://drive.google.com/file/d/13tDXlhEieBkPSobwrIESnudP9lxG3vQ_/view?usp=drive_link",sourceurl:"https://github.com/dmsgur/ai_train_0317/blob/codeone/ClassificationSoftmax_fashionmnist/Examp_classification_fashionMnist.py"})
+
+d1.set_fill("회귀 모델의 softmax 다중 분류 구현")//사용자 에필로그
 data_sets.push(d2)
 
 // menu3 =============================================================
