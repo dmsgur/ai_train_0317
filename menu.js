@@ -12,7 +12,7 @@ menu0.url = "?menu=0"
 menu0.tips = ["1.1 보스턴 주택가격 예측","1.2 캘리포니아 주택가격 예측","1.3 1년 후 당뇨 상태 예측" ]
 menu1 = new Menu("2. 분류 모델 구축")
 menu1.url = "?menu=1"
-menu1.tips = ["2.1 fashion_mnist_softmax","2.2 테스트케이스 작성","2.3 단위테스트"] //로그인 로그아웃 기능
+menu1.tips = ["2.1 fashion_mnist_softmax","2.2 컨볼루션레이어적용모델(CNN)","2.3 "] //로그인 로그아웃 기능
 menu2 = new Menu("3. 서버프로그램 구현")
 menu2.url = "?menu=2"
 menu2.tips = ["3.1 회원가입 구현","3.2 회원 로그인 구현","3.3 회원 로그아웃 구현","3.4 회원 리스트 출력 구현 ","3.5 테스트케이스","3.6 Mock Object 테스트","3.7 테스트 결과보고서"]
