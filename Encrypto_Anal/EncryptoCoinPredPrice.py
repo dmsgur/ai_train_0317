@@ -1,18 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[30]:
-
-
-#EncrytoCoinPredPrice(딥러닝 암호화폐 가격 분석 예측)
+#EncryptoCoinPredPrice(딥러닝 암호화폐 가격 분석 예측)
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from utilpy import getCandleData, creatX,integraion_xdata
-
-
-# In[31]:
-
 
 candle_data=getCandleData("days",cname="BTC")
 x_datasets,y_datasets = creatX(candle_data,10)# 2param - 문제파일의 추출 갯수
@@ -20,17 +10,8 @@ x_datasets,featurelist = integraion_xdata(x_datasets)
 print("기본값 일별 데이터 ")
 print(x_datasets.shape)
 print(y_datasets.shape)
-
-
-# In[32]:
-
-
 print(x_datasets[0])
 print(featurelist)
-
-
-# In[33]:
-
 
 # opening_price = np.mean(x_datasets[:,:,0],axis=1)#(194, 5, 6)
 # high_price = np.mean(x_datasets[:,:,1],axis=1)#(194, 5, 6)
@@ -65,18 +46,9 @@ print(featurelist)
 #     sum/=5
 #     print(sum)
 
-
-# In[34]:
-
-
 #산점도에 의해 연관성이 없이 마직막 두개의 데이터 삭제
 x_datasets = np.delete(x_datasets,[-2,-1],axis=-1)
 print(x_datasets[0])
-
-
-# In[35]:
-
-
 #데이터정규화
 import sklearn
 print(x_datasets.shape)
@@ -93,19 +65,9 @@ x_datasets[:,:,0]=(x_datasets[:,:,0]-m1)/s1
 x_datasets[:,:,1]=(x_datasets[:,:,1]-m2)/s2
 x_datasets[:,:,2]=(x_datasets[:,:,2]-m3)/s3
 x_datasets[:,:,3]=(x_datasets[:,:,3]-m4)/s4
-
-
-# In[36]:
-
-
 x_datasets = np.mean(x_datasets,axis=-1)
 y_datasets = np.mean(y_datasets,axis=-1)
 print(x_datasets.shape,y_datasets.shape)
-
-
-# In[37]:
-
-
 from tensorflow.keras import Sequential, Input
 from tensorflow.keras.layers import Dense,Dropout
 model = Sequential()
@@ -120,36 +82,16 @@ model.add(Dense(1,activation="linear"))
 layer_adam = tf.keras.optimizers.Adam(0.005)
 model.compile(loss="mae",optimizer=layer_adam,metrics=["mse"])
 print(x_datasets.shape);print(y_datasets.shape);
-
-
-# In[38]:
-
-
 fhist = model.fit(x_datasets,y_datasets,epochs=1000,batch_size=20)
-
-
-# In[39]:
-
-
 y_pred = model.predict(x_datasets)
 print(y_pred.shape,y_datasets.shape)
 y_pred = y_pred.reshape(y_pred.shape[0])
 print(y_pred.shape)
 print(y_pred[0])
-
-
-# In[40]:
-
-
 print(y_pred[0])
 plt.plot(y_datasets,y_datasets,color="red")
 plt.scatter(y_datasets,y_pred,s=3)
 plt.show()
-
-
-# In[41]:
-
-
 print("오늘의 예측 가격정보:",end="")
 print(f"최저:{y_pred[-2]*0.9:.2f} 최고:{y_pred[-2]*1.1:.2f} 평균:{y_pred[-2]:.2f}")
 print("내일의 예측 가격정보:",end="")
@@ -158,11 +100,6 @@ print("내일의 예측 상승하락율:",end="")
 print(f"최저:{((y_pred[-1])/(y_pred[-2])-1)*100*0.9:.2f}%\
         최고:{((y_pred[-1])/(y_pred[-2])-1)*100*1.1:.2f}%\
         평균:{((y_pred[-1])/(y_pred[-2])-1)*100:.2f}%")
-
-
-# In[42]:
-
-
 plt.plot(y_datasets,label="True")
 plt.plot(y_pred,label="Pred")
 plt.legend()
